@@ -34,6 +34,12 @@ Input rules (per SPEC):
 python calculator.py
 ```
 
+## Setup
+
+```powershell
+pip install -r requirements.txt
+```
+
 ## Run tests
 
 ```powershell
