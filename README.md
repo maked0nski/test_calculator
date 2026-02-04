@@ -28,16 +28,16 @@ Input rules (per SPEC):
 - Division by zero returns `Error`
 - After `Error`, only `C` clears the state
 
-## Run the calculator
-
-```powershell
-python calculator.py
-```
-
 ## Setup
 
 ```powershell
 pip install -r requirements.txt
+```
+
+## Run the calculator
+
+```powershell
+python calculator.py
 ```
 
 ## Run tests
