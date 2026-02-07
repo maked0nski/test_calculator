@@ -110,17 +110,17 @@ class CalculatorGUI:
         self.error_state = False
         self.leading_operator_ignored = False
 
-        # Дисплей
+        # Display
         self.display = tk.Entry(master, font=("Arial", 28), justify='right',
                                 bg="white", fg="black", borderwidth=3, relief="solid",
                                 highlightthickness=1, highlightbackground="#9E9E9E")
         self.display.grid(row=0, column=0, columnspan=5, padx=20, pady=20, sticky="nsew")
         self.display.insert(0, "0")
 
-        # Обробка клавіатури
+        # Keyboard processing
         self.master.bind('<Key>', self.on_key_press)
 
-        # Оновлений список кнопок зі стандартними символами * та /
+        # Updated list of buttons with standard symbols * and /
         buttons = [
             ('7', 1, 0, '#004C99', '#F2F2F2'), ('8', 1, 1, '#004C99', '#F2F2F2'), ('9', 1, 2, '#004C99', '#F2F2F2'),
             ('/', 1, 3, 'white', '#7A7A7A'), ('←', 1, 4, 'white', '#B0B0B0'),
@@ -146,17 +146,17 @@ class CalculatorGUI:
 
     def on_key_press(self, event):
         key = event.char
-        # Мапінг спеціальних клавіш
+        # Mapping of special keys
         mapping = {
             '\r': '=',  # Enter
             '\x08': '←',  # Backspace
             '\x1b': 'C',  # Escape
-            ',': '.'  # Заміна коми на крапку
+            ',': '.'  # Replacing a comma with a full stop
         }
 
         char = mapping.get(key, key)
 
-        # Перевірка на допустимі символи (включаючи * та /)
+        # Check for valid characters (including * and /)
         allowed_chars = "0123456789+-*/.C=←"
         if char in allowed_chars:
             self.process_input(char)
@@ -186,13 +186,13 @@ class CalculatorGUI:
             else:
                 self.expression = str(result)
         else:
-            # ЛОГІКА ЗАМІНИ ОПЕРАТОРА:
+            # LOGIC OF OPERATOR REPLACEMENT:
             if char in '+-*/':
                 if not self.expression:
                     self.leading_operator_ignored = True
                     return
-                elif self.expression[-1] in '+-*/':  # Якщо останній символ - оператор
-                    self.expression = self.expression[:-1] + char  # ЗАМІНЮЄМО ЙОГО
+                elif self.expression[-1] in '+-*/':  # If the last character is an operator
+                    self.expression = self.expression[:-1] + char  #  replace it
                 else:
                     self.expression += char
             else:

@@ -10,5 +10,3 @@ Your submission should demonstrate:
 •	Clean, maintainable Python code
 •	Understanding of BDD principles (Given / When / Then)
 During the interview you will be asked to explain your work, how it is built and any considerations you have made in its creation.
-
-тест

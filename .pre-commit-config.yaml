@@ -3,7 +3,7 @@ repos:
     hooks:
     -   id: no-cyrillic-characters
         name: Check for Cyrillic characters
-        entry: grep -nP '[а-яА-ЯіІїЇєЄґҐ]'
-        language: system
+        entry: python tools/check_no_cyrillic.py
+        language: python
         files: '\.(py|js|ts|cpp|cs|go|java|txt|md|feature)$'
         exclude: 'translations/.*'
