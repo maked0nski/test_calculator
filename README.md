@@ -40,6 +40,12 @@ pip install -r requirements.txt
 python calculator.py
 ```
 
+## Setup
+Install the python packages required
+```powershell
+pip install -r requirements.txt
+```
+
 ## Run tests
 
 ```powershell

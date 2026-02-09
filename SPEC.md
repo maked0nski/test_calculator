@@ -47,7 +47,7 @@ The goal of this specification is to:
 ## 3. Supported Operations
 
 | Operator | Description      |
-| -------- | ---------------- |
+|----------|------------------|
 | `+`      | Addition         |
 | `-`      | Subtraction      |
 | `*`      | Multiplication   |
@@ -113,7 +113,7 @@ Invalid numeric formats result in `Error` upon calculation.
 #### 5.2.1 Operator as first input
 
 | Input | Result |
-| ----- | ------ |
+|-------|--------|
 | `+5=` | `5`    |
 | `-5=` | `5`    |
 | `*5=` | `5`    |
@@ -130,7 +130,7 @@ If an operator is entered immediately after another operator,
 **the previous operator MUST be replaced**.
 
 | Input   | Interpreted as | Result |
-| ------- | -------------- | ------ |
+|---------|----------------|--------|
 | `5++5=` | `5+5`          | `10`   |
 | `5+-5=` | `5-5`          | `0`    |
 | `5*-5=` | `5-5`          | `0`    |
@@ -162,7 +162,7 @@ Example:
 If the expression ends with an operator, calculation MUST fail.
 
 | Input | Result |
-| ----- | ------ |
+|-------|--------|
 | `5+=` | Error  |
 | `5-=` | Error  |
 | `5*=` | Error  |
@@ -188,7 +188,7 @@ Examples:
 ## 6. Backspace (`←`) Behaviour
 
 | State | Action | Result |
-| ----- | ------ | ------ |
+|-------|--------|--------|
 | `9`   | `←`    | `0`    |
 | `99`  | `←`    | `9`    |
 | `5+`  | `←`    | `5`    |
@@ -206,7 +206,7 @@ Examples:
 * Clears any error state.
 
 | Before  | After |
-| ------- | ----- |
+|---------|-------|
 | `123`   | `0`   |
 | `Error` | `0`   |
 
@@ -297,7 +297,7 @@ Examples:
 ## 13. Explicitly Unsupported Features
 
 | Feature         | Reason             |
-| --------------- |--------------------|
+|-----------------|--------------------|
 | SIGN / ±        | Out of scope       |
 | Unary minus     | Simplifies parsing |
 | Parentheses     | Out of scope       |
